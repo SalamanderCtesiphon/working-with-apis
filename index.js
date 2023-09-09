@@ -26,12 +26,10 @@ selectionBtn.addEventListener('click', (e) => {
 const img = document.querySelector("img")
 
 async function getGiphy() { 
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=FKHrnl8qaMWyeJf85XwRk8AKF6GmD3Zr&s=cats', {
+  const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=FKHrnl8qaMWyeJf85XwRk8AKF6GmD3Zr&s=cats', {
   mode: 'cors'
-})
-  .then(function(response) {
-    return response.json()
   })
+   response.json()
   .then(function(response) {
     img.src = response.data.images.original.url
   })
@@ -40,7 +38,7 @@ async function getGiphy() {
   })
 }
 
-
+getGiphy()
 
 const btn = document.getElementById('refresh')
 
