@@ -11,7 +11,10 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=FKHrnl8qaMWyeJf85XwRk8AKF
   })
   .then(function(response) {
     img.src = response.data.images.original.url
-})
+  })
+  .catch(function(err) {
+    console.log(err)
+  })
 
 const btn = document.getElementById('refresh')
 
