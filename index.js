@@ -10,5 +10,5 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=FKHrnl8qaMWyeJf85XwRk8AKF
     return response.json()
   })
   .then(function(response) {
-  console.log(response)
+    img.src = response.data.images.original.url
 })
